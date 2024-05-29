@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+     <title>Pop-up Page - Step 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="top-bar">
+        
+    </header>
+
+    <!-- Logo BG-->
+<div class="logo-container">A
+    <img src="TPLogo11.png" alt="Logo">
+</div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+    <div class="popup-container">
+    
+        <div class="popup-content" id="step1">
+ 
+
+            <div class="additional-logo">
+                <img src="TPLogo11.png" alt="Additional Logo">
+            </div>
+            <div id="how-to">
+                <a href="HowtoVid.html" target="_blank">
+                    <button1 class="how-to-button1">How To</button1>
+                </a>
+            </div>
+            
+    <div class="language-selection">
+        <label for="emp-lang-select">Choose Your Language:</label>
+        <select id="emp-lang-select">
+            <option value="english">English</option>
+            <option value="japanese">Japanese</option>
+            <option value="korean">Korean</option>
+            <option value="malay">Malay</option>
+            <option value="mandarin">Mandarin</option>
+            <option value="thai">Thai</option>
+        </select>
+    </div>
+    <div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+
+
+        <h2>  Please key in your BMS ID</h2>
+        <input type="text" id="bms-id" placeholder=" Key in your BMS ID here.">
+        <h2> Please select your referral’s selection </h2>
+        <h3>Language:</h3>
+        <select id="language-select">
+            <option value="korean">Korean</option>
+            <option value="japanese">Japanese</option>
+            <option value="english">English</option>
+             <option value="thai">Thai</option>
+            <option value="Indonesian">Bahasa Indonesian</option>
+            <option value="mandarin">Mandarin</option>
+            <option value="Tagalog">Tagalog</option>
+
+            
+        </select>
+
+        <h3> Working location:</h3>
+        <select id="location-select">
+            <!-- Options will be populated dynamically based on the selected language -->
+        </select>
+
+        <h3> Job Position :</h3>
+        <select id="job-type-select">
+            <!-- Options will be populated dynamically based on the selected language and location -->
+        </select>
+    
+        <div>
+            <h3 id="job-title-display"></h3>
+            <a id="job-link-display" href="#" target="_blank"></a>
+        </div>
+        <button onclick="nextStep()">Next</button>
+    </div>
+    <div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+    <div class="popup-content" id="step2" style="display: none;">
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+        <div class="additional-logo">
+            <img src="TPLogo11.png" alt="Additional Logo">
+        </div>
+        <div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<div class="spacer"></div>
+        <div id="refresh">
+            <button onclick="refreshPage()" class="refresh-btn">
+                <span class="material-icons">back</span>
+            </button>
+        </div>
+        <h2>Thank you for your referral!</h2>
+        <p>As we grow into Malaysia, become #MoreTogether as we #ElevateAsia, here are the links your friend can use so this is tagged to your profile into our Recruiting System.</p>
+        <div id="generated-link"></div>
+        <!-- Add buttons to share link via WhatsApp and Line -->
+        <button id="share-button-whatsapp">Share via WhatsApp  </button>
+ 
+        <button id="share-button-line">Share via Line</button>
+
+        
+        <div id="qrBox">
+            <img src="" id="qrImg">
+        </div>
+        <button id="scan-code-button" onclick="generateQrCode()">or have your friend scanning this code above!</button>
+        <p id="thank-you">Thank you for your referral!</p>
+        <p id="referral-message">As we grow into Malaysia, become #MoreTogether as we #ElevateAsia, here are the links your friend can use so this is tagged to your profile into our Recruiting System.</p>
+        <h2 id="vr-message">They can visit our locations in VR so they learn of us:</h2>
+        
+        <div id="picture-container">
+            <img src="MicrosoftTeams-image.png" alt="Description of the image">
+        </div>
+        <p id="talent-team-message">The Talent Attraction Team</p>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+/* Add your custom styles here */
+
+/* Dropdown styling */
+.styled-dropdown {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #8a09aa;
+    transition: all 0.3s ease;
+    width: 100%;
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer; /* Add pointer cursor */
+}
+
+/* Container hover effect */
+.styled-dropdown:hover, .styled-dropdown:focus {
+    background-color: #ffffff;
+    padding: 10px;
+    border-color: #fffcfc; /* Change border color on hover */
+    height: auto;
+    overflow: auto;
+    opacity: 1; 
+}
+
+/* Dropdown options styling */
+.styled-dropdown option {
+    font-size: 18px; /* Increase font size for options */
+    padding: 10px; /* Add padding for better spacing */
+    background-color: #fff; /* Default background color for options */
+    color: #030303; /* Default text color for options */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for option hover */
+}
+
+/* Styling for the options when hovered */
+.styled-dropdown:hover option {
+    background-color: #f5eef5; /* Custom background color for hovered option */
+    color: #030303; /* Custom text color for hovered option */
+    font-size: 20px; /* Increase font size when hovered */
+}
+/* Styling for the selected option */
+.styled-dropdown option:checked {
+    background-color: #b862b3; /* Custom background color for selected option */
+    color: #000000; /* Custom text color for selected option */
+    font-weight: bold; /* Make selected option bold */
+}
+/* Dropdown label styling */
+.popup-content > div:not(.additional-logo) > label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Change label color */
+}
+
+ 
+ 
+/* Body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+
+.popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.popup-content {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 50px 50px 50px 60px; /* Adjust padding to move content up */
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    justify-content: center; /* Center content vertically */
+    align-items: center; 
+}
+
+h2 {
+    color: #b52b65; /* Pinkish purple */
+        font-size: 28px; /* Larger font size */
+    margin-bottom: 20px;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #666666;
+    
+}
+ 
+ 
+ 
+/* Container for top bar elements */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.additional-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transform: scale(0.2);
+    flex-grow: 1;
+}
+
+.language-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px; /* Add margin to separate from other elements */
+    flex-grow: 1;
+}
+
+.language-selection label {
+    margin-right: 10px;
+}
+
+.language-selection select {
+    padding: 10px;
+    background-color: #cec3cc;
+    color: #4e155c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#how-to {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.how-to-button1 {
+    padding: 10px 20px;
+    background-color: #a458b7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.how-to-button1:hover {
+    background-color: #501c5c;
+}
+
+/* Refresh button styling */
+#refresh {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+}
+
+.refresh-btn {
+    padding: 10px 20px;
+    background-color: #903c8e;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.refresh-btn .material-icons {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.refresh-btn:hover {
+    background-color: #a458b7;
+}
+
+ 
+
+ 
+input {
+    width: calc(100% - 20px); /* Subtract padding from width */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #f2f2f2; /* Light gray border */
+    border-radius: 10px;
+    font-size: 16px; /* Larger font size */
+    transition: border-color 0.3s; /* Smooth border transition */
+}
+input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #f02757; /* Hot pink border color on focus */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #903c8e; /* Deep purple */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a458b7; /* Lighter purple on hover */
+}
+
+/* Add styles for the QR code container */
+#qr-code {
+    margin-top: 20px; /* Adjust spacing */
+    text-align: center; /* Center QR code */
+    position: relative; /* Position container for absolute positioning of logo */
+}
+
+/* Optional: Style for the generated QR code itself */
+#qr-code canvas {
+    width: 200px; /* Adjust the size of the QR code */
+    height: auto;
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add some border radius for rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Add styles for the logo */
+#qr-code img.logo {
+    position: absolute; /* Position the logo relative to the container */
+    top: 50%; /* Center the logo vertically */
+    left: 50%; /* Center the logo horizontally */
+    transform: translate(-50%, -50%); /* Center the logo precisely */
+    max-width: 80px; /* Adjust the maximum width of the logo */
+    max-height: 80px; /* Adjust the maximum height of the logo */
+    z-index: 1; /* Ensure the logo appears above the QR code */
+}
+
+/* Add styles for the share buttons */
+#share-button-whatsapp,
+#share-button-line {
+    margin-top: 20px; /* Adjust spacing */
+    margin-bottom: 20px; /* Adjust spacing */
+    padding: 10px 20px;
+    background-color: #903c8e; /* Deep purple */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#share-button-whatsapp:hover,
+#share-button-line:hover {
+    background-color: #a458b7; /* Lighter purple on hover */
+}
+
+/* Color hashtags */
+.popup-content::before,
+.popup-content::after {
+    content: attr(data-content);
+    color: #ff69b4; /* Hot pink */
+    font-weight: bold; /* Make hashtags bold */
+}
+#picture-container {
+    margin-top: 20px; /* Adjust spacing */
+    text-align: center; /* Center the image */
+    position: relative;
+}
+#picture-container img {
+    width: 200px; /* Set the width to match the QR code size */
+    height: 200px; /* Set the height to match the QR code size */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+#custom-image {
+    max-width: 200px; /* Adjust the maximum width of the image */
+    max-height: 200px; /* Adjust the maximum height of the image */
+}
+/* CSS for logo container */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the logo appears above other content */
+}
+
+.logo-container img {
+    max-width: 100%; /* Make the logo responsive */
+    height: auto;
+
+}
+/* Adjustments for other elements */
+.popup-container {
+    position: relative;  /* Ensure the logo container is positioned relative to this container */
+    z-index: 1; /* Ensure other content appears above the logo */
+}
+ 
+
+
+ 
+ 
+/* Container for the whole page */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+ 
+
+/* Logo container */
+.logo-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the logo appears above other content */
+}
+
+.logo-container img {
+    max-width: 100%; /* Make the logo responsive */
+    height: auto;
+ 
+}
+ 
+
+/* Content section */
+#content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;  /* Ensure the logo container is positioned relative to this container */
+    z-index: 1; /* Ensure other content appears above the logo */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the logo appears above other content */
+}
+
+#content h2 {
+    color: #b52b65;
+    font-size: 28px;
+    margin-bottom: 20px;
+    position: relative;  /* Ensure the logo container is positioned relative to this container */
+    z-index: 1; /* Ensure other content appears above the logo */
+    
+}
+
+/* Video container styling */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    max-width: 100%;
+    border: none;
+}
+ /* Media query for mobile responsiveness */
+@media screen and (min-width: 768px) {
+    /* Adjustments for larger screens */
+   
+    input,
+    select {
+        width: fit-content;
+        margin-right: 20px;
+        font-size: 20px; /* Larger font size */
+        margin-bottom: 20px;
+
+    }
+
+   /* Button styles */
+ 
+
+#how-to button:hover {
+    background-color: #a458b7;
+}
+
+    #header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #how-to {
+        margin-top: 0;
+     }
+}
