@@ -42,7 +42,7 @@ function translate(language) {
             qrCodeMessage: "또는 이 코드를 통해 지인을 추천부탁드립니다.",
             vrMessage: "VR을 통해 좀더 저희회사에 대해 자세히 알아 보십시오 : ",
             talentTeamMessage: "채용담당팀",
-             HowtoButton: "H어떻게	!",
+             HowtoButton: "어떻게	!",
              BackButton: "뒤로"
      
 
