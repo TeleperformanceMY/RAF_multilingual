@@ -1,7 +1,24 @@
-
+.job-type-select select {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #8a09aa;
+    transition: all 0.3s ease;
+    width: 100%;
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer; /* Add pointer cursor */
+}
 
 /* Dropdown styling */
-.styled-dropdown {
+.language-selection select,
+.location-selection select,
+.job-type-select select {
     padding: 8px 15px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -19,7 +36,12 @@
 }
 
 /* Container hover effect */
-.styled-dropdown:hover, .styled-dropdown:focus {
+.language-selection select:hover,
+.language-selection select:focus,
+.location-selection select:hover,
+.location-selection select:focus,
+.job-type-select select:hover,
+.job-type-select select:focus {
     background-color: #ffffff;
     padding: 10px;
     border-color: #fffcfc; /* Change border color on hover */
@@ -29,7 +51,9 @@
 }
 
 /* Dropdown options styling */
-.styled-dropdown option {
+.language-selection select option,
+.location-selection select option,
+.job-type-select select option {
     font-size: 18px; /* Increase font size for options */
     padding: 10px; /* Add padding for better spacing */
     background-color: #fff; /* Default background color for options */
@@ -38,17 +62,49 @@
 }
 
 /* Styling for the options when hovered */
-.styled-dropdown:hover option {
+.language-selection select:hover option,
+.location-selection select:hover option,
+.job-type-select select:hover option {
     background-color: #f5eef5; /* Custom background color for hovered option */
     color: #030303; /* Custom text color for hovered option */
     font-size: 20px; /* Increase font size when hovered */
 }
 /* Styling for the selected option */
-.styled-dropdown option:checked {
+.language-selection select option:checked,
+.location-selection select option:checked,
+.job-type-select select option:checked {
     background-color: #b862b3; /* Custom background color for selected option */
     color: #000000; /* Custom text color for selected option */
     font-weight: bold; /* Make selected option bold */
 }
+
+
+ /* How To button container styling */
+#how-to {
+    text-align: center;
+    margin-top: 20px; /* Adjust margin as needed */
+    position: absolute;
+    top: 100px; /* Adjust to account for spacer height */
+    left: calc(50% + 50px); /* Adjust as needed */
+}
+
+/* Button styles */
+.how-to-button1 {
+    padding: 10px 10px;
+    font-size: 14px;
+    background-color: #903c8e;
+    color: #fffcfc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.how-to-button1:hover {
+    background-color: #a458b7;
+}
+
+
 /* Dropdown label styling */
 .popup-content > div:not(.additional-logo) > label {
     display: block;
@@ -121,17 +177,17 @@ label {
     height: 20px; /* Adjust as needed */
 }
 
+
 /* Additional logo styling */
 .additional-logo {
     display: flex;
     position: absolute;
-    top: -130px; /* Adjust as needed */
-    right: 300px; /* Adjust as needed */
+    top: -100px; /* Adjust as needed */
+    right: 150px; /* Adjust as needed */
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Align content to the start (left) */
     transform: scale(0.2); /* Maintain the scale */
     padding: 5px; /* Adjust for desired spacing around the logo */
-    background-color: transparent; /* Or any background color to create contrast */
     border-radius: 5px; /* Adjust to create rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
@@ -143,29 +199,7 @@ label {
     left: calc(37% + 50px); /* Adjust as needed */
 }
 
-/* How To button container styling */
-#how-to {
-    position: absolute;
-    top: 100px; /* Adjust to account for spacer height */
-    left: calc(70% + 50px); /* Adjust as needed */
-    display: inline-block;
-}
 
-/* Button styles */
-.how-to-button1 {
-    background-color: #903c8e;
-    color: #fffcfc;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.how-to-button1:hover {
-    background-color: #a458b7;
-}
 
 /* General body styles */
 body {
