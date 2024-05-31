@@ -286,11 +286,14 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         window.location.href = "HowtoVid.html";
     };
+ 
+// Request prompt as last message
+window.onload = function() {
+    var prompts = document.querySelectorAll('.popup-content > div:not(.additional-logo):not(#how-to)');
+    var lastPrompt = prompts[prompts.length - 1];
+    lastPrompt.innerHTML += " ";
+};
 
-    // Request prompt as last message
-    window.onload = function() {
-        var prompts = document.querySelectorAll('.popup-content > div:not(.additional');
-    }
 });
 function refreshPage() {
     location.reload();
