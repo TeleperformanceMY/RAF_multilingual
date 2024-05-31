@@ -43,7 +43,7 @@ select:hover option {
 
 /* Styling for the selected option */
 select option:checked {
-    background-color: #FF0082; /* Custom background color for selected option */
+    background-color: #aa3c75; /* Custom background color for selected option */
     color: #000000; /* Custom text color for selected option */
     font-weight: bold; /* Make selected option bold */
 }
@@ -144,7 +144,7 @@ select option:checked {
 }
 
 .popup-content button:hover {
-    background-color: #FF0082;
+    background-color: #b94782;
 }
 
 /* Body styling */
