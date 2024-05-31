@@ -1,30 +1,15 @@
-.job-type-select select {
-    padding: 8px 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #8a09aa;
-    transition: all 0.3s ease;
-    width: 100%;
-    appearance: none; /* Remove default arrow */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
-    cursor: pointer; /* Add pointer cursor */
-}
+ 
+ 
+  
 
 /* Dropdown styling */
-.language-selection select,
-.location-selection select,
-.job-type-select select {
+select {
     padding: 8px 15px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
-    color: #8a09aa;
+    color: #780096;
     transition: all 0.3s ease;
     width: 100%;
     appearance: none; /* Remove default arrow */
@@ -36,24 +21,13 @@
 }
 
 /* Container hover effect */
-.language-selection select:hover,
-.language-selection select:focus,
-.location-selection select:hover,
-.location-selection select:focus,
-.job-type-select select:hover,
-.job-type-select select:focus {
+select:hover, select:focus {
     background-color: #ffffff;
-    padding: 10px;
     border-color: #fffcfc; /* Change border color on hover */
-    height: auto;
-    overflow: auto;
-    opacity: 1; 
 }
 
 /* Dropdown options styling */
-.language-selection select option,
-.location-selection select option,
-.job-type-select select option {
+select option {
     font-size: 18px; /* Increase font size for options */
     padding: 10px; /* Add padding for better spacing */
     background-color: #fff; /* Default background color for options */
@@ -62,21 +36,64 @@
 }
 
 /* Styling for the options when hovered */
-.language-selection select:hover option,
-.location-selection select:hover option,
-.job-type-select select:hover option {
+select:hover option {
     background-color: #f5eef5; /* Custom background color for hovered option */
     color: #030303; /* Custom text color for hovered option */
-    font-size: 20px; /* Increase font size when hovered */
 }
+
 /* Styling for the selected option */
-.language-selection select option:checked,
-.location-selection select option:checked,
-.job-type-select select option:checked {
-    background-color: #b862b3; /* Custom background color for selected option */
+select option:checked {
+    background-color: #FF0082; /* Custom background color for selected option */
     color: #000000; /* Custom text color for selected option */
     font-weight: bold; /* Make selected option bold */
 }
+
+
+ 
+ 
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between buttons */
+    margin: 10px 0;
+}
+
+/* Social buttons styling */
+.social-btn {
+    width: 50px; /* Set fixed width */
+    height: 50px; /* Set fixed height */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make buttons circular */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-size: cover; /* Ensure background covers entire button */
+}
+
+/* Specific background images for social buttons */
+.fb-btn {
+    background-image: url('fb.png'); /* Path to Facebook logo */
+    background-color: #4267B2; /* Background color as fallback */
+}
+
+.ig-btn {
+    background-image: url('ig.jpeg'); /* Path to Instagram logo */
+ }
+
+.yt-btn {
+    background-image: url('yt1.jpg'); /* Path to YouTube logo */
+    background-color: #FF0000; /* Background color as fallback */
+}
+
+/* Hover effect for social buttons */
+.social-btn:hover, .social-btn:focus {
+    opacity: 0.8; /* Slightly transparent on hover */
+}
+
+
 
 
  /* How To button container styling */
@@ -92,7 +109,7 @@
 .how-to-button1 {
     padding: 10px 10px;
     font-size: 14px;
-    background-color: #903c8e;
+    background-color: #780096;
     color: #fffcfc;
     border: none;
     border-radius: 5px;
@@ -101,7 +118,7 @@
 }
 
 .how-to-button1:hover {
-    background-color: #a458b7;
+    background-color: #FF0082;
 }
 
 
@@ -118,7 +135,7 @@
 /* Next button styling */
 .popup-content button {
     padding: 10px 10px;
-    background-color: #a458b7;
+    background-color: #780096;
     color: white;
     border: none;
     border-radius: 50px;
@@ -127,7 +144,7 @@
 }
 
 .popup-content button:hover {
-    background-color: #501c5c;
+    background-color: #FF0082;
 }
 
 /* Body styling */
@@ -136,6 +153,8 @@ body {
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+ 
+     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 
@@ -165,6 +184,12 @@ h2 {
     margin-bottom: 20px;
     
 }
+h3 {
+    color: #361e3d; /* Pinkish purple */
+     margin-bottom: 20px;
+    
+}
+
 
 label {
     display: block;
@@ -196,17 +221,11 @@ label {
 .language-selection {
     position: absolute;
     top: 23px; /* Adjust to account for spacer height */
-    left: calc(37% + 50px); /* Adjust as needed */
+    left: calc(60% + 50px); /* Adjust as needed */
 }
 
 
 
-/* General body styles */
-body {
-    margin: 0;
-    padding-top: 60px; /* Adjust based on the height of your elements */
-    overflow-x: hidden; /* Prevent horizontal overflow */
-}
 
  
 input {
@@ -220,12 +239,12 @@ input {
 }
 input:focus {
     outline: none; /* Remove default focus outline */
-    border-color: #f02757; /* Hot pink border color on focus */
+    border-color: #FF0082; /* Hot pink border color on focus */
 }
 
 button {
     padding: 10px 20px;
-    background-color: #903c8e; /* Deep purple */
+    background-color: #780096; /* Deep purple */
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -233,7 +252,7 @@ button {
 }
 
 button:hover {
-    background-color: #a458b7; /* Lighter purple on hover */
+    background-color: #FF0082; /* Lighter purple on hover */
 }
 
 /* Add styles for the QR code container */
@@ -269,7 +288,7 @@ button:hover {
     margin-top: 20px; /* Adjust spacing */
     margin-bottom: 20px; /* Adjust spacing */
     padding: 10px 20px;
-    background-color: #903c8e; /* Deep purple */
+    background-color: #780096; /* Deep purple */
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -278,14 +297,14 @@ button:hover {
 
 #share-button-whatsapp:hover,
 #share-button-line:hover {
-    background-color: #a458b7; /* Lighter purple on hover */
+    background-color: #FF0082; /* Lighter purple on hover */
 }
 
 /* Color hashtags */
 .popup-content::before,
 .popup-content::after {
     content: attr(data-content);
-    color: #ff69b4; /* Hot pink */
+    color: #FF0082; /* Hot pink */
     font-weight: bold; /* Make hashtags bold */
 }
 #picture-container {
@@ -371,7 +390,7 @@ button:hover {
 }
 
 #content h2 {
-    color: #b52b65;
+    color: #FF0082;
     font-size: 28px;
     margin-bottom: 20px;
     position: relative;  /* Ensure the logo container is positioned relative to this container */
@@ -393,35 +412,24 @@ button:hover {
  /* Media query for mobile responsiveness */
 
  
-/* Media query for phones */
-@me dia screen and (max-width: 600px) {
-    /* Adjustments for logo */
-    .additional-logo {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        transform: scale(0.1); /* Adjust for XXXXS size */
+
+
+/* Mobile view adjustments */
+@media (max-width: 600px) {
+    select {
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 8px 10px; /* Adjust padding for mobile */
     }
 
-    /* Adjustments for language selection */
-    .language-selection {
-        position: absolute;
-        top: 10px;
-        left: 100px; /* Adjust based on logo size and spacing */
-        margin: 20px auto; /* Center on smaller screens */
-        text-align: center; /* Center text */
+    select option {
+        font-size: 16px; /* Adjust font size for mobile options */
+        padding: 8px; /* Adjust padding for mobile options */
     }
+    /* Mobile view adjustments */
+     .social-btn {
+        font-size: 14px; /* Adjust font size for mobile */
+        padding: 8px 10px; /* Adjust padding for mobile */
+    }
+ 
 
-    /* Adjustments for How To button */
-    #how-to {
-        position: absolute;
-        top: 10px;
-        left: 200px; /* Adjust based on logo size and spacing */
-        margin: 20px auto; /* Center on smaller screens */
-        text-align: center; /* Center text */
-    }
-
-    .spacer {
-        display: none; /* Hide spacers on smaller screens */
-    }
 }
