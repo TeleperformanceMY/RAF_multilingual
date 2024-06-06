@@ -1,3 +1,5 @@
+
+
 // Translation function
 function translate(language) {
     const translations = {
@@ -274,30 +276,42 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(lineLink, "_blank");
     });
 
-    document.getElementById("share-button-Wechat").addEventListener("click", function() {
+ 
+    document.getElementById("share-button-facebook").addEventListener("click", function() {
+        const facebookMessage = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
+        const facebookMessage2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
+        const facebookCaption = encodeURIComponent(facebookMessage + "\n\n" + generatedLink.querySelector('a').href + "\n\n" + facebookMessage2);
+        const facebookLink = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(generatedLink.querySelector('a').href)}&quote=${facebookCaption}`;
+        window.open(facebookLink, "_blank", "width=600,height=400");
+    });
+    
+      
+    document.getElementById("share-button-IG").addEventListener("click", function() {
         const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
         const message2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
-        const wechatLink = `https://wechat.me/R/msg/text/?${encodeURIComponent(message + "\n\n" + generatedLink.querySelector('a').href + "\n\n" + message2)}`;
-        window.open(wechatLink, "_blank");
+        const instagramCaption = encodeURIComponent(message + "\n\n" + generatedLink.querySelector('a').href + "\n\n" + message2);
+        
+        // Open Instagram app if available, otherwise open Instagram website
+        const instagramAppLink = `instagram://library?Caption=${instagramCaption}`;
+        const instagramWebLink = `https://www.instagram.com/stories/myday?utm_source=ig_story_share&igshid=YOUR_IG_USER_ID`;
+    
+        // Try opening Instagram app, if it fails, open Instagram website
+        window.open(instagramAppLink, "_blank", "width=600,height=400") || window.open(instagramWebLink, "_blank");
     });
-    document.getElementById('share-button-facebook').onclick = function() {
-        const url = window.location.href;
-        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
-    };
-
-    document.getElementById('share-button-IG').onclick = function() {
-        alert('Sharing to Instagram Stories is not supported directly via web. You can share this link manually.');
-    };
-
-    document.getElementById('share-button-TikTok').onclick = function() {
-        alert('Sharing to TikTok is not supported directly via web. You can share this link manually.');
-    };
-    // Open How To link in the same window
-    document.querySelector("#how-to a").onclick = function(event) {
-        event.preventDefault();
-        window.location.href = "HowtoVid.html";
-    };
- 
+    
+    document.getElementById("share-button-TikTok").addEventListener("click", function() {
+        const message = "🌟 Exciting news! Join our amazing team at Teleperformance! 🌟 We're expanding our family and want you to be a part of it. Click the link below to start your new journey :";
+        const message2 = "\n\nLet's grow together! 🚀 #JoinTheTeam";
+        const tiktokCaption = encodeURIComponent(message + "\n\n" + generatedLink.querySelector('a').href + "\n\n" + message2);
+        
+        // Open TikTok app if available, otherwise open TikTok website
+        const tiktokAppLink = `tiktok://share?text=${tiktokCaption}`;
+        const tiktokWebLink = `https://www.tiktok.com/share?url=YOUR_VIDEO_URL`;
+    
+        // Try opening TikTok app, if it fails, open TikTok website
+        window.open(tiktokAppLink, "_blank") || window.open(tiktokWebLink, "_blank");
+    });
+    
 // Request prompt as last message
 window.onload = function() {
     var prompts = document.querySelectorAll('.popup-content > div:not(.additional-logo):not(#how-to)');
