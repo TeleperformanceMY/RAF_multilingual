@@ -280,7 +280,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const wechatLink = `https://wechat.me/R/msg/text/?${encodeURIComponent(message + "\n\n" + generatedLink.querySelector('a').href + "\n\n" + message2)}`;
         window.open(wechatLink, "_blank");
     });
+    document.getElementById('share-button-facebook').onclick = function() {
+        const url = window.location.href;
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank');
+    };
 
+    document.getElementById('share-button-IG').onclick = function() {
+        alert('Sharing to Instagram Stories is not supported directly via web. You can share this link manually.');
+    };
+
+    document.getElementById('share-button-TikTok').onclick = function() {
+        alert('Sharing to TikTok is not supported directly via web. You can share this link manually.');
+    };
     // Open How To link in the same window
     document.querySelector("#how-to a").onclick = function(event) {
         event.preventDefault();
@@ -293,9 +304,22 @@ window.onload = function() {
     var lastPrompt = prompts[prompts.length - 1];
     lastPrompt.innerHTML += " ";
 };
+ // JavaScript code
+document.addEventListener('DOMContentLoaded', function() {
+    var video = document.querySelector('video');
+
+    video.addEventListener('contextmenu', function(e) {
+        e.preventDefault(); // Prevent the default context menu from appearing
+
+        // Display a custom menu at the mouse position
+        // You can customize this menu with your own options and styling
+        // For simplicity, let's just show an alert for now
+        alert('Custom menu options here');
+    });
+});
+
 
 });
 function refreshPage() {
     location.reload();
 }
-
