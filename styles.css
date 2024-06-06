@@ -93,8 +93,14 @@ select option:checked {
     opacity: 0.8; /* Slightly transparent on hover */
 }
 
+.small-share-button {
+    padding: 5px; /* Adjust padding as needed */
+}
 
-
+.small-share-button img {
+    max-width: 25px; /* Adjust maximum width of the image */
+    max-height: 25px; /* Adjust maximum height of the image */
+}
 
  /* How To button container styling */
 #how-to {
