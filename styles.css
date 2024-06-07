@@ -359,6 +359,7 @@ body {
 
 /* Logo container for Step 2 */
 #step2 .additional-logo {
+    display: none;
     position: fixed; /* Ensure it stays in the same position relative to the viewport */
     top: -20%; /* Adjust this value to move it down */
     left: 50%; /* Center horizontally */
