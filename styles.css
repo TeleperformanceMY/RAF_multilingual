@@ -414,7 +414,41 @@ body {
     
 }
 
- 
+ .social-btn {
+    border-radius: 50%; /* Make buttons circular */
+    display: inline-block;
+    margin: 5px 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px; /* Set fixed width */
+    height: 40px; /* Set fixed height */
+    background-size: contain; /* Ensure the logo fits inside the circle */
+    background-repeat: no-repeat; /* Prevent background repetition */
+    background-position: center; /* Center the background image */
+}
+
+/* Specific background colors for social buttons */
+.fb-btn {
+    background-color: #3b5998;
+    background-image: url('fb.png'); /* Add Facebook logo */
+ }
+
+.ig-btn {
+    background-color: #e4405f;
+    background-image: url('ig.jpeg'); /* Add Instagram logo */
+ }
+
+.yt-btn {
+    background-color: #cd201f;
+    background-image: url('yt.png'); /* Add YouTube logo */
+ }
+
+/* Hover effect for social buttons */
+.social-btn:hover, .social-btn:focus {
+    border-color: #662222; /* Change border color on hover */
+    opacity: 0.9;
+}
+
 
 
 /* Mobile view adjustments */
