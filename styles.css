@@ -467,17 +467,7 @@ body {
         font-size: 14px; /* Adjust font size for mobile */
         padding: 8px 10px; /* Adjust padding for mobile */
     }
- /* Media query for phones */
-@media only screen and (max-width: 600px) {
-    #content1 {
-        width: 90%; /* Adjust the width for smaller screens */
-        margin-left: -45%; /* Adjust the left margin to center on smaller screens */
-    }
-    
-    .logo-container1 {
-        margin-top: -25px; /* Half of the logo container's height */
-        margin-left: -25px; /* Half of the logo container's width */
-    }
+ 
 }
 
 
