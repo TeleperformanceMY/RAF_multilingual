@@ -133,7 +133,7 @@ function translate(language) {
         qrCodeMessage: "または上のコードを友達にスキャンしてもらいまし ょう ！",
         vrMessage: "VRで勤務地を訪問してもらい、当社についてさらに知ってもらいましょう：",
         talentTeamMessage: "タレントアトラクションチームより",
-        HowtoButton: "どうする!",
+        HowtoButton: "ご利用方法!",
         BackButton: "元に戻る"
 
     }     };
