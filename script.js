@@ -1,5 +1,6 @@
 
 
+
 // Translation function
 function translate(language) {
     const translations = {
@@ -141,7 +142,56 @@ function translate(language) {
     return translations[language];
 }
 
-// Update page content based on selected language
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedLanguage = urlParams.get('lang') || localStorage.getItem('selectedLanguage') || 'english';
+
+    // Update page content based on selected language
+    updatePageContent(selectedLanguage);
+
+    // Update video source based on selected language
+    const videoElement = document.getElementById('video-source');
+    const videoSources = {
+        english: 'video_english.mp4',
+        korean: 'video_korean.mp4',
+        thai: 'video_thai.mp4',
+        malay: 'video_malay.mp4',
+        mandarin: 'video_mandarin.mp4',
+        japanese: 'video_japanese.mp4'
+    };
+    videoElement.src = videoSources[selectedLanguage];
+    videoElement.load(); // Reload the video
+
+    // Update "How To" link
+    updateHowToLink(selectedLanguage);
+});
+
+// Function to update "How To" link with current language and UTM parameters
+function updateHowToLink(language) {
+    const howToLink = document.querySelector("#how-to a");
+    const utmParams = getUTMParameters();
+    howToLink.href = `HowtoVid.html?lang=${language}${utmParams}`;
+}
+
+// Function to get UTM parameters from the URL
+function getUTMParameters() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmParams = ['utm_source', 'utm_medium', 'utm_campaign']; // Add any other UTM parameters you need to pass
+    let utmString = '';
+
+    utmParams.forEach(param => {
+        const value = urlParams.get(param);
+        if (value) {
+            utmString += `&${param}=${value}`;
+        }
+    });
+
+    return utmString;
+}
+
+
+// Function to update page content based on selected language
 function updatePageContent(language) {
     const translations = translate(language);
 
@@ -167,8 +217,8 @@ function updatePageContent(language) {
     document.querySelector("#talent-team-message").textContent = translations.talentTeamMessage;
 
     // Update options in select elements
-    updateLanguageSelectOptions();
-}
+ }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const languageSelect = document.getElementById('language-select');
@@ -180,13 +230,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const step2 = document.getElementById('step2');
     const generatedLink = document.getElementById('generated-link');
     const qrImg = document.getElementById('qrImg');
+    
 
-    // Event listener for language changes
+
+
     document.getElementById("emp-lang-select").addEventListener("change", function() {
         const selectedLanguage = this.value;
         updatePageContent(selectedLanguage);
+    
+        // Update the URL with the selected language
+        const url = new URL(window.location);
+        url.searchParams.set('lang', selectedLanguage);
+        window.history.pushState({}, '', url);
+    
+        // Store the selected language in local storage
+        localStorage.setItem('selectedLanguage', selectedLanguage);
+    
+        // Update "How To" link with the new language and UTM parameters
+        updateHowToLink(selectedLanguage);
     });
+    
 
+    
+ 
+    
     let jsonData = [];
 
     // Fetch JSON data
