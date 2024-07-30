@@ -22,12 +22,12 @@
 <div class="spacer"></div>
  
             <h2>How To Refer a Friend</h2>
-            <button onclick="goBack()">Go Back</button>
+            <button id="back-button" onclick="goBack()">Go Back</button>
             <div class="spacer"></div>
 <div class="spacer"></div>
  
             <div class="video-container">
-                <video width="560" height="315" controls>
+                <video  id="video-source" width="560" height="315" controls>
                     <source src="RAF Guide.mp4" type="video/mp4">
                     <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
                     <track src="subtitles.vtt" kind="subtitles" srclang="en" label="Japanese">
@@ -42,9 +42,93 @@
  
     </div>
 
+ 
     <script>
+        // Function to go back in history and maintain language selection
         function goBack() {
-            window.history.back();
+            const selectedLanguage = localStorage.getItem('selectedLanguage') || 'english';
+            window.location.href = `index.html?lang=${selectedLanguage}`;
+        }
+    
+        // Event listener for DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve the language code from URL or local storage
+            const urlParams = new URLSearchParams(window.location.search);
+            const selectedLanguage = urlParams.get('lang') || localStorage.getItem('selectedLanguage') || 'english';
+    
+            // Update the page content and video source
+            updatePageContent(selectedLanguage);
+    
+            // Update the video source based on the selected language
+            const videoElement = document.getElementById('video-source');
+            if (videoElement) {
+                const videoSources = {
+                    english: 'RAF Guide.mp4',
+                    korean: 'RAF Guide.mp4',
+                    thai: 'RAF Guide.mp4',
+                    malay: 'RAF Guide.mp4',
+                    mandarin: 'RAF Guide.mp4',
+                    japanese: 'Japanese RAF Guide 4.mp4'
+                };
+    
+                videoElement.src = videoSources[selectedLanguage] || videoSources['english']; // Default to English if no match
+                videoElement.load(); // Reload the video
+            } else {
+                console.error('Video element with ID "video-source" not found.');
+            }
+    
+            // Update the "Go Back" button text
+            const backButton = document.getElementById("back-button");
+            if (backButton) {
+                backButton.textContent = translate(selectedLanguage).BackButton;
+            } else {
+                console.error('Back button element with ID "back-button" not found.');
+            }
+        });
+    
+        // Function to update page content based on selected language
+        function updatePageContent(language) {
+            const translations = translate(language);
+    
+            // Update labels and texts
+            document.querySelector("h2").textContent = translations.howToRefer;
+            const backButton = document.getElementById("back-button");
+            if (backButton) {
+                backButton.textContent = translations.BackButton;
+            } else {
+                console.error('Back button element with ID "back-button" not found.');
+            }
+        }
+    
+        // Function to get translations based on selected language
+        function translate(language) {
+            const translations = {
+                english: {
+                    howToRefer: "How To Refer a Friend",
+                    BackButton: "Go Back"
+                },
+                korean: {
+                    howToRefer: "친구를 추천하는 방법",
+                    BackButton: "돌아가기"
+                },
+                thai: {
+                    howToRefer: "วิธีแนะนำเพื่อน",
+                    BackButton: "กลับ"
+                },
+                malay: {
+                    howToRefer: "Cara Merujuk Rakan",
+                    BackButton: "Kembali"
+                },
+                mandarin: {
+                    howToRefer: "如何推荐朋友",
+                    BackButton: "返回"
+                },
+                japanese: {
+                    howToRefer: "友人を紹介する方法",
+                    BackButton: "戻る"
+                }
+            };
+            return translations[language] || translations.english;
         }
     </script>
     
