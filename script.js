@@ -253,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
  
-    
     let jsonData = [];
 
     // Fetch JSON data
@@ -262,55 +261,117 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             jsonData = data;
             populatePreferredLanguages(jsonData);
+            populateLocations(jsonData); // Populate both language and location at the beginning
         })
         .catch(error => console.error('Error loading JSON data:', error));
-
+    
     // Populate preferred languages based on JSON data
     function populatePreferredLanguages(data) {
         const languages = [...new Set(data.map(item => item.Language))];
         populateDropdown(languageSelect, languages);
     }
-
-    // Populate locations based on selected language
+    
+    // Populate locations based on JSON data
+    function populateLocations(data) {
+        const locations = [...new Set(data.map(item => item.Location))];
+        populateDropdown(locationSelect, locations);
+    }
+    
+    // Event listener for language selection
     languageSelect.addEventListener('change', function() {
         const selectedLanguage = this.value;
-        const locations = [...new Set(jsonData.filter(item => item.Language === selectedLanguage).map(item => item.Location))];
-        populateDropdown(locationSelect, locations);
-        populateDropdown(jobSelect, []); // Reset job dropdown
+        
+        // Filter locations based on the selected language, but keep existing location selection
+        const filteredLocations = selectedLanguage 
+            ? [...new Set(jsonData.filter(item => item.Language === selectedLanguage).map(item => item.Location))]
+            : [...new Set(jsonData.map(item => item.Location))]; // If no language is selected, show all locations
+    
+        // Update the locations dropdown but keep the previously selected location if still valid
+        updateDropdownWithSelectedValue(locationSelect, filteredLocations, locationSelect.value);
+    
+        // Update jobs dropdown if both language and location are selected
+        updateJobsDropdown();
     });
-
-    // Populate jobs based on selected language and location
+    
+    // Event listener for location selection
     locationSelect.addEventListener('change', function() {
-        const selectedLanguage = languageSelect.value;
         const selectedLocation = this.value;
-        const jobs = jsonData.filter(item => item.Language === selectedLanguage && item.Location === selectedLocation).map(item => item.Positions);
-        populateDropdown(jobSelect, jobs);
+    
+        // Filter languages based on the selected location, but keep existing language selection
+        const filteredLanguages = selectedLocation
+            ? [...new Set(jsonData.filter(item => item.Location === selectedLocation).map(item => item.Language))]
+            : [...new Set(jsonData.map(item => item.Language))]; // If no location is selected, show all languages
+    
+        // Update the languages dropdown but keep the previously selected language if still valid
+        updateDropdownWithSelectedValue(languageSelect, filteredLanguages, languageSelect.value);
+    
+        // Update jobs dropdown if both language and location are selected
+        updateJobsDropdown();
     });
-
-   
+    
+    // Update the job dropdown based on both selected language and location
+    function updateJobsDropdown() {
+        const selectedLanguage = languageSelect.value;
+        const selectedLocation = locationSelect.value;
+    
+        if (selectedLanguage && selectedLocation) {
+            const jobs = jsonData
+                .filter(item => item.Language === selectedLanguage && item.Location === selectedLocation)
+                .map(item => item.Positions);
+            populateDropdown(jobSelect, jobs);
+        } else {
+            // Reset jobs dropdown if either dropdown is not selected
+            populateDropdown(jobSelect, []);
+        }
+    }
+    
+    // Function to populate a dropdown with options, keeping the current selected value if possible
+    function updateDropdownWithSelectedValue(dropdown, options, currentValue) {
+        populateDropdown(dropdown, options);
+    
+        // If the current value is still a valid option, reselect it
+        if (options.includes(currentValue)) {
+            dropdown.value = currentValue;
+        } else {
+            dropdown.value = ''; // Reset to default if the current value is no longer valid
+        }
+    }
+    
+    // Function to populate a dropdown with options
+    function populateDropdown(dropdown, options) {
+        dropdown.innerHTML = ''; // Clear previous options
+        dropdown.appendChild(new Option('--Select--', '')); // Default "Select" option
+        options.forEach(option => {
+            const opt = document.createElement('option');
+            opt.value = option;
+            opt.text = option;
+            dropdown.appendChild(opt);
+        });
+    }
+    
     // Move to the next step and display the generated link
     window.nextStep = function() {
         const bmsId = document.getElementById('bms-id').value;
         if (!bmsId) {
-            alert("Please enter a valid BMS ID (numbers only).")(translate(document.getElementById("emp-lang-select").value).bmsIdError);
+            alert("Please enter a valid BMS ID (numbers only).");
             return;
         }
-
+    
         const selectedLanguage = languageSelect.value;
         const selectedLocation = locationSelect.value;
         const selectedJob = jobSelect.value;
         const jobData = jsonData.find(item => item.Language === selectedLanguage && item.Location === selectedLocation && item.Positions === selectedJob);
-
+    
         if (jobData) {
-            const finalLink = jobData["Evergreen link"] +  bmsId;
+            const finalLink = jobData["Evergreen link"] + bmsId;
             generatedLink.innerHTML = `<a href="${finalLink}" target="_blank">${finalLink}</a>`;
             generateQrCode(finalLink);
         }
-
+    
         step1.style.display = 'none';
         step2.style.display = 'block';
     };
-
+    
     // Function to populate dropdown options
     function populateDropdown(dropdown, options) {
         dropdown.innerHTML = '<option value="">Select</option>';
