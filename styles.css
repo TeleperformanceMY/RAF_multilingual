@@ -450,54 +450,72 @@ body {
 }
 
 
+/* Global container adjustments for auto-responsiveness */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
-/* Mobile view adjustments */
+/* General container for centering and scaling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh; /* Full viewport height to ensure content fits without scrolling */
+    padding: 20px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's size */
+}
+
+/* Ensuring elements within the container are responsive */
+#content1, #content, .popup-container, .popup-content {
+    width: 100%;
+    max-width: 600px; /* Set a maximum width for larger screens */
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Ensure inputs, buttons, and selects are auto-adjusting */
+input, select, button {
+    width: 100%;
+    max-width: 100%; /* Ensure they don't overflow */
+    box-sizing: border-box;
+}
+
+/* Adjust font and padding for smaller screens */
 @media (max-width: 600px) {
-    body {
-        width: auto; /* Set the width to 100% on mobile */
-        margin: 0; /* Remove any margin */
-        padding: 0; /* Remove padding */
-        overflow-x: hidden; /* Disable horizontal scrolling */
+    body, html {
+        font-size: 14px; /* Reduce font size for small screens */
     }
 
-    .container, #content1, #content, .popup-content {
-        width: auto; /* Make the containers full width */
-        position: relative; /* Reset the position */
-        top: auto; /* Remove fixed top positioning */
-        left: auto; /* Remove fixed left positioning */
-        transform: none; /* Remove centering transformation */
-        padding: 10px; /* Adjust padding */
-        margin: 0 auto; /* Center content */
+    .container {
+        padding: 10px;
     }
 
-    .popup-container, .logo-container {
-        width: auto; /* Make sure popups and logos are full width */
-        top: auto; /* Remove top positioning */
-        transform: none; /* Remove centering transformation */
-        margin: 0 auto; /* Center content */
-    }
-
-    /* Adjust the layout to avoid any overflow */
-    .popup-content {
-        padding: 20px 15px; /* Add some padding to avoid content touching the edges */
-    }
-
-    h2, h3 {
-        font-size: 20px; /* Smaller headings on mobile */
-        margin-bottom: 10px;
-    }
-
-    /* Buttons and other elements */
-    button, input, select {
-        font-size: 14px; /* Smaller font size */
-        width: auto; /* Make sure buttons and inputs fill the width */
-    }
-
-    .social-btn {
-        width: 30px; /* Smaller social buttons */
-        height: 30px;
+    select, input, button {
+        font-size: 14px; /* Adjust font size for smaller inputs */
+        padding: 8px 10px; /* Adjust padding for smaller inputs */
     }
 }
+
+/* Ensure image responsiveness */
+img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Overflow fix for content positioning */
+#content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the content */
+}
+
 
 
 
