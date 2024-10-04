@@ -454,14 +454,14 @@ body {
 /* Mobile view adjustments */
 @media (max-width: 600px) {
     body {
-        width: 100%; /* Set the width to 100% on mobile */
+        width: auto; /* Set the width to 100% on mobile */
         margin: 0; /* Remove any margin */
         padding: 0; /* Remove padding */
         overflow-x: hidden; /* Disable horizontal scrolling */
     }
 
     .container, #content1, #content, .popup-content {
-        width: 100%; /* Make the containers full width */
+        width: auto; /* Make the containers full width */
         position: relative; /* Reset the position */
         top: auto; /* Remove fixed top positioning */
         left: auto; /* Remove fixed left positioning */
@@ -471,7 +471,7 @@ body {
     }
 
     .popup-container, .logo-container {
-        width: 100%; /* Make sure popups and logos are full width */
+        width: auto; /* Make sure popups and logos are full width */
         top: auto; /* Remove top positioning */
         transform: none; /* Remove centering transformation */
         margin: 0 auto; /* Center content */
@@ -490,7 +490,7 @@ body {
     /* Buttons and other elements */
     button, input, select {
         font-size: 14px; /* Smaller font size */
-        width: 100%; /* Make sure buttons and inputs fill the width */
+        width: auto; /* Make sure buttons and inputs fill the width */
     }
 
     .social-btn {
