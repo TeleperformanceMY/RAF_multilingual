@@ -504,14 +504,8 @@ input, select, button {
         padding: 8px 10px; /* Adjust padding for smaller inputs */
     }
 }
-.logo-container {
-        top: 5%; /* Adjust for smaller screens */
-        max-width: 150px; /* Reduce the size of the logo on mobile */
-    }
 
-    .logo-container img {
-        max-width: 100%; /* Ensure the image still scales properly */
-    }
+    
 /* Ensure image responsiveness */
 img {
     max-width: 100%;
