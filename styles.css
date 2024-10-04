@@ -453,61 +453,52 @@ body {
 
 /* Mobile view adjustments */
 @media (max-width: 600px) {
-    body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%; /* Ensure full width on mobile */
-        overflow-x: hidden; /* Prevent horizontal scrolling */
-    }
-    
-    .container, .popup-content {
-        width: 90%; /* Adjust to fill most of the screen */
-        padding: 10px; /* Adjust padding for smaller screen */
-        margin: 0 auto; /* Center the container */
+    body {
+        width: 100%; /* Set the width to 100% on mobile */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Remove padding */
+        overflow-x: hidden; /* Disable horizontal scrolling */
     }
 
-    #content1 {
-        width: 100%; /* Make content take full width */
-        top: 50%; /* Center vertically */
-        left: 50%;
-        transform: translate(-50%, -50%);
+    .container, #content1, #content, .popup-content {
+        width: 100%; /* Make the containers full width */
+        position: relative; /* Reset the position */
+        top: auto; /* Remove fixed top positioning */
+        left: auto; /* Remove fixed left positioning */
+        transform: none; /* Remove centering transformation */
+        padding: 10px; /* Adjust padding */
+        margin: 0 auto; /* Center content */
+    }
+
+    .popup-container, .logo-container {
+        width: 100%; /* Make sure popups and logos are full width */
+        top: auto; /* Remove top positioning */
+        transform: none; /* Remove centering transformation */
+        margin: 0 auto; /* Center content */
+    }
+
+    /* Adjust the layout to avoid any overflow */
+    .popup-content {
+        padding: 20px 15px; /* Add some padding to avoid content touching the edges */
     }
 
     h2, h3 {
-        font-size: 22px; /* Reduce font size for mobile */
-        margin-bottom: 15px;
+        font-size: 20px; /* Smaller headings on mobile */
+        margin-bottom: 10px;
     }
 
-    select, input, button {
-        width: 100%; /* Make all form elements full width */
-        font-size: 14px;
+    /* Buttons and other elements */
+    button, input, select {
+        font-size: 14px; /* Smaller font size */
+        width: 100%; /* Make sure buttons and inputs fill the width */
     }
 
-    /* Adjust social buttons for mobile */
     .social-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 12px;
-    }
-
-    #qr-code canvas, #picture-container img {
-        width: 150px; /* Adjust QR code and image size */
-        height: 150px;
-    }
-
-    /* Adjust content and logo for better centering */
-    .logo-container, .logo-container1 {
-        top: 60%; /* Adjust position */
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    /* Adjust button styles */
-    button {
-        font-size: 12px; /* Smaller button text for mobile */
-        padding: 8px 10px; /* Adjust button padding */
+        width: 30px; /* Smaller social buttons */
+        height: 30px;
     }
 }
+
 
 
  
