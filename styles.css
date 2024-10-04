@@ -17,7 +17,14 @@ html, body {
     flex-direction: column; /* Stack content vertically */
     align-items: center; /* Center align items */
 }
-
+.background-logo {
+    position: fixed; /* Ensure it stays in the same position relative to the viewport */
+    top: 50%; /* Adjust this value to position it as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center vertically */
+    opacity: 0.1; /* Set transparency to 10% */
+    z-index: -1; /* Ensure it stays behind other content */
+}
 /* Content container */
 #content1, #content {
     background-color: rgba(255, 255, 255, 0.9);
