@@ -359,13 +359,15 @@ body {
 
 /* Logo container for Step 2 */
 #step2 .additional-logo {
-    display: none;
-    position: fixed; /* Ensure it stays in the same position relative to the viewport */
-    top: -20%; /* Adjust this value to move it down */
+
+     position: absolute; /* Allows you to place it precisely */
+    top: 10%; /* Adjust top positioning */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center vertically */
-    transform: scale(0.2);
-    z-index: 1; /* Ensure it appears above other content */
+    transform: translate(-50%, -10%); /* Correctly center it by adjusting the translate values */
+    z-index: 1000; /* Ensure it is above other content */
+    max-width: 200px; /* Set a max width */
+    width: 100%; /* Make the logo responsive */
+    height: auto; /* Maintain aspect ratio */
 }
 
 #step2 .additional-logo img {
@@ -502,7 +504,14 @@ input, select, button {
         padding: 8px 10px; /* Adjust padding for smaller inputs */
     }
 }
+.logo-container {
+        top: 5%; /* Adjust for smaller screens */
+        max-width: 150px; /* Reduce the size of the logo on mobile */
+    }
 
+    .logo-container img {
+        max-width: 100%; /* Ensure the image still scales properly */
+    }
 /* Ensure image responsiveness */
 img {
     max-width: 100%;
