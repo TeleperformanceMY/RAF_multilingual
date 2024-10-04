@@ -452,7 +452,7 @@ body {
 
 
 /* General mobile responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     /* Centralizing the content */
     .popup-content {
         width: 90%; /* Adjust width for small screens */
