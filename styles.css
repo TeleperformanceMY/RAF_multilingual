@@ -360,14 +360,14 @@ body {
 /* Logo container for Step 2 */
 #step2 .additional-logo {
 
-     position: absolute; /* Allows you to place it precisely */
-    top: 10%; /* Adjust top positioning */
+    display: none;
+    position: fixed; /* Ensure it stays in the same position relative to the viewport */
+    top: -20%; /* Adjust this value to move it down */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -10%); /* Correctly center it by adjusting the translate values */
-    z-index: 1000; /* Ensure it is above other content */
-    max-width: 200px; /* Set a max width */
-    width: 100%; /* Make the logo responsive */
-    height: auto; /* Maintain aspect ratio */
+    transform: translate(-50%, -50%); /* Center vertically */
+    transform: scale(0.2);
+    z-index: 1; /* Ensure it appears above other content */
+ 
 }
 
 #step2 .additional-logo img {
