@@ -452,15 +452,15 @@ body {
 
 
 /* General mobile responsiveness */
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     /* Centralizing the content */
     .popup-content {
-        width: 90%; /* Adjust width for small screens */
+        width: 70%; /* Adjust width for small screens */
         padding: 20px;
         margin: 0 auto; /* Centralize */
-        top: 50%; /* Centralize vertically */
+        top: 1000%; /* Centralize vertically */
         transform: translate(-50%, -50%);
-        left: 50%;
+        left: 80%;
     }
     
     /* Input fields */
