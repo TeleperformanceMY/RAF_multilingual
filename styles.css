@@ -451,22 +451,73 @@ body {
 
 
 
-/* Mobile view adjustments */
+/* General mobile responsiveness */
 @media (max-width: 600px) {
-    select {
-        font-size: 14px; /* Adjust font size for mobile */
-        padding: 8px 10px; /* Adjust padding for mobile */
+    /* Centralizing the content */
+    .popup-content {
+        width: 90%; /* Adjust width for small screens */
+        padding: 20px;
+        margin: 0 auto; /* Centralize */
+        top: 50%; /* Centralize vertically */
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+    
+    /* Input fields */
+    input {
+        width: 100%; /* Full width for input */
+        padding: 12px;
+        margin-bottom: 10px;
     }
 
-    select option {
-        font-size: 16px; /* Adjust font size for mobile options */
-        padding: 8px; /* Adjust padding for mobile options */
+    /* Buttons */
+    button {
+        width: 100%; /* Full width for button */
+        padding: 10px;
     }
-    /* Mobile view adjustments */
-     .social-btn {
-        font-size: 14px; /* Adjust font size for mobile */
-        padding: 8px 10px; /* Adjust padding for mobile */
+
+    /* Select dropdown */
+    select {
+        width: 100%; /* Full width for dropdown */
+        font-size: 14px;
+        padding: 10px;
     }
+
+    /* QR code and images */
+    #qr-code canvas, 
+    #custom-image {
+        width: 100%; /* Full width for images and QR code */
+        max-width: 200px; /* Optional: set max width */
+        height: auto;
+    }
+
+    /* Logos */
+    .logo-container img, 
+    .additional-logo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjust button size and placement */
+    .social-btn {
+        width: 30px; /* Smaller circular button */
+        height: 30px;
+    }
+}
+
+/* General centralization for all screen sizes */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centralize horizontally */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
  
 }
 
