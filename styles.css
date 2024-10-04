@@ -455,12 +455,12 @@ body {
 @media (max-width: 600px) {
     /* Centralizing the content */
     .popup-content {
-        width: 70%; /* Adjust width for small screens */
+        width: 100%; /* Adjust width for small screens */
         padding: 20px;
         margin: 0 auto; /* Centralize */
         top: 1000%; /* Centralize vertically */
         transform: translate(-50%, -50%);
-        left: 80%;
+        left: 100%;
     }
     
     /* Input fields */
