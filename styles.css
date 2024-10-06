@@ -3,6 +3,10 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    height: 100%;
+    background: url('your-static-logo-url.png') no-repeat center center fixed; /* Add your static logo image */
+    background-size: contain; /* Adjust to fit the logo */
+    background-attachment: fixed; /* Make the logo static */
 }
 
 /* General container styling */
@@ -10,6 +14,8 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    position: relative;
+    z-index: 1; /* Ensure content appears above the background logo */
 }
 
 /* Dropdown styling */
@@ -95,6 +101,21 @@ input:focus {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 2; /* Ensure dynamic content stays above the static background */
+}
+
+/* Small dynamic logo styling */
+.small-dynamic-logo {
+    position: absolute;
+    top: 10px; /* Adjust this value to place the small logo */
+    left: 20px; /* Adjust this value to place the small logo */
+    z-index: 3; /* Make sure the logo is above other content */
+}
+
+.small-dynamic-logo img {
+    width: 50px; /* Adjust the size of the small logo */
+    height: auto;
 }
 
 /* QR code styling */
@@ -116,9 +137,7 @@ input:focus {
     z-index: 1;
 }
 
-/* Responsive Styles */
-
-/* Mobile styles */
+/* Mobile view adjustments */
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -157,14 +176,12 @@ input:focus {
         width: 150px;
     }
 
-    .logo-container, .logo-container1 {
-        top: auto;
-        transform: none;
-        position: relative;
+    .small-dynamic-logo img {
+        width: 40px; /* Reduce size of the small logo for mobile */
     }
 }
 
-/* Tablet styles */
+/* Tablet view adjustments */
 @media (min-width: 601px) and (max-width: 1024px) {
     .popup-content {
         padding: 30px;
@@ -179,9 +196,13 @@ input:focus {
     button {
         width: auto;
     }
+
+    .small-dynamic-logo img {
+        width: 45px; /* Adjust size for tablet view */
+    }
 }
 
-/* Desktop styles */
+/* Desktop view */
 @media (min-width: 1025px) {
     .popup-content {
         padding: 50px;
