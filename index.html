@@ -4,10 +4,12 @@
     <title>Refer A Friend</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Remove Bootstrap CSS if not used -->
+    <!-- Link your CSS file -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- The background image is set via CSS -->
+
     <!-- Main Content Container -->
     <div class="container">
         <!-- Small Dynamic Logo -->
@@ -16,7 +18,7 @@
         </div>
 
         <!-- How To Button -->
-        <div class="how-to-container">
+        <div class="how-to-container" id="how-to">
             <a href="HowtoVid.html">
                 <button id="how-to-button" class="how-to-button">How To</button>
             </a>
@@ -51,11 +53,6 @@
             <label for="job-type-select">Job Position:</label>
             <select id="job-type-select"></select>
 
-            <div>
-                <h3 id="job-title-display"></h3>
-                <a id="job-link-display" href="#" target="_blank"></a>
-            </div>
-
             <button onclick="nextStep()">Next</button>
 
             <h2>Follow Us On:</h2>
@@ -69,7 +66,7 @@
         <!-- Step 2 Content -->
         <div class="popup-content" id="step2" style="display: none;">
             <h2>Thank you for your referral!</h2>
-            <p>As we grow into Malaysia, become #MoreTogether as we #ElevateAsia, here are the links your friend can use so this is tagged to your profile into our Recruiting System.</p>
+            <p id="referral-message">As we grow into Malaysia, become #MoreTogether as we #ElevateAsia, here are the links your friend can use so this is tagged to your profile into our Recruiting System.</p>
             <div id="generated-link"></div>
 
             <!-- Share Buttons -->
@@ -93,23 +90,21 @@
 
             <!-- QR Code -->
             <div id="qr-code">
-                <canvas id="qrCanvas"></canvas>
-                <img src="" class="logo" alt="QR Code Logo">
+                <img src="" id="qrImg" alt="QR Code">
             </div>
-            <button id="scan-code-button" onclick="generateQrCode()">Or have your friend scan this code above!</button>
+            <button id="scan-code-button">Or have your friend scan this code above!</button>
 
-            <p id="thank-you">Thank you for your referral!</p>
-            <p id="referral-message">As we grow in Malaysia and Thailand, become #MoreTogether as we #ElevateAsia, here are the links your friend can use so this is tagged to your profile into our Recruiting System.</p>
             <h2 id="vr-message">They can visit our locations in VR so they learn of us:</h2>
 
             <div id="picture-container">
                 <img src="MicrosoftTeams-image.png" alt="VR Image">
             </div>
             <p id="talent-team-message">The Talent Attraction Team</p>
+            <button onclick="refreshPage()">Back</button>
         </div>
     </div>
 
-    <!-- Include your script files -->
+    <!-- Include your JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
