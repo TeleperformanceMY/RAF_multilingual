@@ -1,10 +1,15 @@
-/* General body styling */
+/* Global body styling */
 body {
     margin: 0;
     padding: 0;
-    width: 100%; /* Adjust the width as needed */
-    margin: auto; /* Center the body horizontally */
-    padding: 10px; /* Add padding for mobile */
+    width: 100%;
+}
+
+/* General container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Dropdown styling */
@@ -17,22 +22,22 @@ select {
     color: #780096;
     transition: all 0.3s ease;
     width: 100%;
-    appearance: none; /* Remove default arrow */
+    appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
-    cursor: pointer; /* Add pointer cursor */
+    cursor: pointer;
 }
 
 select:hover, select:focus {
     background-color: #ffffff;
-    border-color: #fffcfc; /* Change border color on hover */
+    border-color: #fffcfc;
 }
 
 select option {
-    font-size: 18px; /* Increase font size for options */
-    padding: 10px; /* Add padding for better spacing */
+    font-size: 18px;
+    padding: 10px;
     background-color: #fff;
     color: #030303;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -63,8 +68,9 @@ button:hover {
     background-color: #FF0082;
 }
 
+/* Input styling */
 input {
-    width: calc(100% - 20px); /* Subtract padding from width */
+    width: calc(100% - 20px);
     padding: 12px;
     margin-bottom: 20px;
     border: 2px solid #f2f2f2;
@@ -78,10 +84,10 @@ input:focus {
     border-color: #FF0082;
 }
 
-/* Popup container styling */
+/* Popup content styling */
 .popup-content {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px 50px 50px 60px;
+    padding: 50px;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -91,30 +97,7 @@ input:focus {
     align-items: center;
 }
 
-/* Content container */
-#content1 {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    position: relative;
-}
-
-/* Container for the whole page */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Adjustments for other elements */
-.popup-container {
-    position: relative;
-    z-index: 1;
-}
-
+/* QR code styling */
 #qr-code canvas {
     width: 200px;
     height: auto;
@@ -133,22 +116,32 @@ input:focus {
     z-index: 1;
 }
 
-/* Mobile view adjustments */
+/* Responsive Styles */
+
+/* Mobile styles */
 @media (max-width: 600px) {
     body {
-        width: 100%;
         padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .popup-content {
+        padding: 20px;
+        width: 100%;
+        border-radius: 20px;
     }
 
     select {
         font-size: 14px;
         padding: 8px 10px;
-        width: 100%;
     }
 
     select option {
         font-size: 16px;
-        padding: 8px;
     }
 
     input {
@@ -157,50 +150,47 @@ input:focus {
 
     button {
         width: 100%;
-        padding: 12px;
         font-size: 14px;
-    }
-
-    .popup-content {
-        padding: 20px;
-        width: 90%;
-        border-radius: 20px;
     }
 
     #qr-code canvas {
         width: 150px;
     }
 
-    #content1 {
-        width: 90%;
-        padding: 10px;
-        border-radius: 20px;
+    .logo-container, .logo-container1 {
         top: auto;
-        left: auto;
         transform: none;
         position: relative;
     }
+}
 
-    .popup-container {
-        width: 100%;
-        padding: 20px;
+/* Tablet styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .popup-content {
+        padding: 30px;
+        width: 80%;
+        border-radius: 30px;
     }
 
-    .social-btn {
-        width: 35px;
-        height: 35px;
+    select {
+        font-size: 16px;
+    }
+
+    button {
+        width: auto;
     }
 }
 
-/* Desktop-specific styles */
-@media (min-width: 601px) {
-    .popup-container, #step2.popup-content {
-        width: 600px;
-    }
-
+/* Desktop styles */
+@media (min-width: 1025px) {
     .popup-content {
         padding: 50px;
-        width: 80%;
+        width: 600px;
         border-radius: 40px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
