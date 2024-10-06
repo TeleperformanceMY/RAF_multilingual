@@ -3,18 +3,18 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    /* Static background logo */
-    background: url('TPLogo11.png') no-repeat center center fixed;
-    background-size: cover;
+    background: url('TPLogo11.png') no-repeat center top fixed;
+    background-size: contain;
+    background-color: #ffffff;
 }
 
 /* Main Content Container */
 .container {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
     z-index: 1;
 }
 
@@ -38,7 +38,7 @@ body {
 
 .how-to-button {
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     background-color: #780096;
     color: #fff;
     border: none;
@@ -64,7 +64,7 @@ body {
 .language-selection select {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 /* Popup Content */
@@ -74,13 +74,13 @@ body {
 
 .popup-content h2 {
     color: #b52b65;
-    font-size: 28px;
+    font-size: 1.75rem;
     margin-bottom: 20px;
 }
 
 .popup-content h3 {
     color: #361e3d;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 10px;
 }
 
@@ -94,7 +94,7 @@ body {
 .popup-content select {
     width: 100%;
     padding: 12px;
-    font-size: 16px;
+    font-size: 1rem;
     border: 2px solid #f2f2f2;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -108,7 +108,7 @@ body {
 
 .popup-content button {
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: 1rem;
     background-color: #780096;
     color: #fff;
     border: none;
@@ -123,6 +123,7 @@ body {
 /* Social Buttons */
 .social-buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
 }
@@ -130,7 +131,7 @@ body {
 .social-btn {
     width: 40px;
     height: 40px;
-    margin: 0 10px;
+    margin: 5px;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -188,7 +189,7 @@ body {
 
 #qr-code canvas {
     width: 200px;
-    height: 200px;
+    height: auto;
 }
 
 #qr-code img.logo {
@@ -197,7 +198,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80px;
-    height: 80px;
+    height: auto;
 }
 
 /* Picture Container */
@@ -221,15 +222,15 @@ body {
     .how-to-button,
     .popup-content button {
         width: 100%;
-        font-size: 14px;
+        font-size: 0.9rem;
     }
 
     .popup-content h2 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .popup-content h3 {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .social-btn {
@@ -238,18 +239,16 @@ body {
     }
 
     .small-share-button {
-        font-size: 14px;
+        font-size: 0.9rem;
         padding: 8px 12px;
     }
 
     #qr-code canvas {
         width: 150px;
-        height: 150px;
     }
 
     #qr-code img.logo {
         width: 60px;
-        height: 60px;
     }
 }
 
@@ -264,16 +263,16 @@ body {
 
     .how-to-button,
     .popup-content button {
-        font-size: 12px;
-        padding: 10px;
+        font-size: 0.8rem;
+        padding: 8px;
     }
 
     .popup-content h2 {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .popup-content h3 {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .social-btn {
@@ -282,17 +281,15 @@ body {
     }
 
     .small-share-button {
-        font-size: 12px;
+        font-size: 0.8rem;
         padding: 6px 10px;
     }
 
     #qr-code canvas {
         width: 120px;
-        height: 120px;
     }
 
     #qr-code img.logo {
         width: 50px;
-        height: 50px;
     }
 }
