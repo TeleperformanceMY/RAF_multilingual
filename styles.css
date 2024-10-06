@@ -3,86 +3,73 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    width: 100%;
-    height: 100%;
-    background: url('your-static-logo-url.png') no-repeat center center; /* Static logo in the center */
-    background-size: contain; /* Adjust the logo size to fit */
-    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    background: url('path/to/your/static-logo.png') no-repeat center center fixed; /* Static background logo */
+    background-size: cover; /* Adjust the size as needed (contain, cover, or specific dimensions) */
 }
 
-/* General container styling */
-.container {
+/* Main content container */
+.content-container {
+    position: relative;
+    z-index: 1; /* Ensure content is above the background */
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    position: relative;
-    z-index: 2; /* Content stays above the background */
-    background-color: rgba(255, 255, 255, 0.9); /* Optional: add a white transparent background to make content readable */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: Semi-transparent background for readability */
 }
 
-/* Small dynamic logo styling */
+/* Small dynamic logo */
 .small-dynamic-logo {
     position: absolute;
-    top: 20px; /* Position the logo at the top of the container */
+    top: 20px; /* Adjust position as needed */
     left: 20px;
-    z-index: 3; /* Keep the logo on top of other content */
+    z-index: 2; /* Above other content but below modals if any */
 }
 
 .small-dynamic-logo img {
-    width: 100px; /* Adjust the size of the dynamic logo */
+    width: 100px; /* Adjust size as needed */
     height: auto;
 }
 
 /* Dropdown styling */
 select {
-    padding: 8px 15px;
+    width: 100%;
+    padding: 12px 15px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
     color: #780096;
-    transition: all 0.3s ease;
-    width: 100%;
     appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24"><path d="M7 10l5 5 5-5z"/></svg>');
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: 12px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
-select:hover, select:focus {
-    background-color: #ffffff;
-    border-color: #fffcfc;
+select:focus {
+    outline: none;
+    border-color: #FF0082;
 }
 
 select option {
-    font-size: 18px;
-    padding: 10px;
     background-color: #fff;
     color: #030303;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-select:hover option {
-    background-color: #f5eef5;
-    color: #661a1a;
-}
-
-select option:checked {
-    background-color: #aa3c75;
-    color: #000000;
-    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
 }
 
 /* Button styling */
 button {
-    padding: 10px 20px;
+    padding: 12px 20px;
+    font-size: 16px;
     background-color: #780096;
     color: #ffffff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -91,13 +78,12 @@ button:hover {
 
 /* Input styling */
 input {
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 12px;
     margin-bottom: 20px;
     border: 2px solid #f2f2f2;
     border-radius: 10px;
     font-size: 16px;
-    transition: border-color 0.3s;
 }
 
 input:focus {
@@ -105,28 +91,18 @@ input:focus {
     border-color: #FF0082;
 }
 
-/* Popup content styling */
-.popup-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 50px;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* QR code container */
+#qr-code {
     position: relative;
-    z-index: 2;
+    text-align: center;
+    margin-top: 20px;
 }
 
-/* QR code styling */
 #qr-code canvas {
-    width: 200px;
+    width: 200px; /* Adjust size as needed */
     height: auto;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 #qr-code img.logo {
@@ -134,93 +110,64 @@ input:focus {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 80px;
-    max-height: 80px;
-    z-index: 1;
+    width: 80px; /* Adjust size as needed */
+    height: auto;
 }
 
-/* Responsive Styles */
+/* Social buttons */
+.social-btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
-/* Mobile styles */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
+.fb-btn {
+    background-image: url('path/to/facebook-icon.png');
+}
+
+.ig-btn {
+    background-image: url('path/to/instagram-icon.png');
+}
+
+.yt-btn {
+    background-image: url('path/to/youtube-icon.png');
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .small-dynamic-logo img {
+        width: 80px;
     }
 
-    .container {
-        padding: 10px;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95); /* Add more transparency for mobile */
-    }
-
-    .popup-content {
-        padding: 20px;
-        width: 100%;
-        border-radius: 20px;
-    }
-
-    select {
+    button, select, input {
         font-size: 14px;
-        padding: 8px 10px;
-    }
-
-    select option {
-        font-size: 16px;
-    }
-
-    input {
-        width: 100%;
-    }
-
-    button {
-        width: 100%;
-        font-size: 14px;
+        padding: 10px;
     }
 
     #qr-code canvas {
         width: 150px;
     }
-
-    .small-dynamic-logo img {
-        width: 60px; /* Reduce size of the small logo for mobile */
-    }
 }
 
-/* Tablet styles */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .popup-content {
-        padding: 30px;
-        width: 80%;
-        border-radius: 30px;
-    }
-
-    select {
-        font-size: 16px;
-    }
-
-    button {
-        width: auto;
-    }
-
+@media (max-width: 480px) {
     .small-dynamic-logo img {
-        width: 80px; /* Adjust size for tablet view */
-    }
-}
-
-/* Desktop styles */
-@media (min-width: 1025px) {
-    .popup-content {
-        padding: 50px;
-        width: 600px;
-        border-radius: 40px;
+        width: 60px;
     }
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
+    .content-container {
+        padding: 15px;
     }
 
-    .small-dynamic-logo img {
-        width: 100px; /* Adjust size for desktop */
+    button, select, input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #qr-code canvas {
+        width: 120px;
     }
 }
