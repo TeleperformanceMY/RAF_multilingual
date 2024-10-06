@@ -2,11 +2,12 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
     width: 100%;
     height: 100%;
-    background: url('your-static-logo-url.png') no-repeat center center fixed; /* Add your static logo image */
-    background-size: contain; /* Adjust to fit the logo */
-    background-attachment: fixed; /* Make the logo static */
+    background: url('your-static-logo-url.png') no-repeat center center; /* Static logo in the center */
+    background-size: contain; /* Adjust the logo size to fit */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
 }
 
 /* General container styling */
@@ -15,7 +16,21 @@ body {
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    z-index: 1; /* Ensure content appears above the background logo */
+    z-index: 2; /* Content stays above the background */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: add a white transparent background to make content readable */
+}
+
+/* Small dynamic logo styling */
+.small-dynamic-logo {
+    position: absolute;
+    top: 20px; /* Position the logo at the top of the container */
+    left: 20px;
+    z-index: 3; /* Keep the logo on top of other content */
+}
+
+.small-dynamic-logo img {
+    width: 100px; /* Adjust the size of the dynamic logo */
+    height: auto;
 }
 
 /* Dropdown styling */
@@ -102,20 +117,7 @@ input:focus {
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2; /* Ensure dynamic content stays above the static background */
-}
-
-/* Small dynamic logo styling */
-.small-dynamic-logo {
-    position: absolute;
-    top: 10px; /* Adjust this value to place the small logo */
-    left: 20px; /* Adjust this value to place the small logo */
-    z-index: 3; /* Make sure the logo is above other content */
-}
-
-.small-dynamic-logo img {
-    width: 50px; /* Adjust the size of the small logo */
-    height: auto;
+    z-index: 2;
 }
 
 /* QR code styling */
@@ -137,7 +139,9 @@ input:focus {
     z-index: 1;
 }
 
-/* Mobile view adjustments */
+/* Responsive Styles */
+
+/* Mobile styles */
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -146,6 +150,7 @@ input:focus {
     .container {
         padding: 10px;
         width: 100%;
+        background-color: rgba(255, 255, 255, 0.95); /* Add more transparency for mobile */
     }
 
     .popup-content {
@@ -177,11 +182,11 @@ input:focus {
     }
 
     .small-dynamic-logo img {
-        width: 40px; /* Reduce size of the small logo for mobile */
+        width: 60px; /* Reduce size of the small logo for mobile */
     }
 }
 
-/* Tablet view adjustments */
+/* Tablet styles */
 @media (min-width: 601px) and (max-width: 1024px) {
     .popup-content {
         padding: 30px;
@@ -198,11 +203,11 @@ input:focus {
     }
 
     .small-dynamic-logo img {
-        width: 45px; /* Adjust size for tablet view */
+        width: 80px; /* Adjust size for tablet view */
     }
 }
 
-/* Desktop view */
+/* Desktop styles */
 @media (min-width: 1025px) {
     .popup-content {
         padding: 50px;
@@ -213,5 +218,9 @@ input:focus {
     .container {
         max-width: 1200px;
         margin: 0 auto;
+    }
+
+    .small-dynamic-logo img {
+        width: 100px; /* Adjust size for desktop */
     }
 }
