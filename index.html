@@ -4,21 +4,21 @@
     <title>Refer A Friend</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS (optional if not used) -->
+    <!-- Remove Bootstrap CSS if not used -->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Static Background Logo -->
     <div class="background-logo">
-        <img src="TPLogo11.png" alt="Background Logo">
+        <!-- The logo will be set via CSS background-image -->
     </div>
 
     <!-- Main Content Container -->
     <div class="container">
         <!-- Small Dynamic Logo -->
         <div class="small-dynamic-logo">
-            <img src="TPLogo11.png" alt="Small Logo">
+            <img src="TPLogo11.png" alt="Logo">
         </div>
 
         <!-- How To Button -->
@@ -47,19 +47,21 @@
             <input type="text" id="bms-id" placeholder="Key in your BMS ID here.">
 
             <h2>Please select your referral’s selection</h2>
-            <h3>Language:</h3>
+
+            <label for="language-select">Language:</label>
             <select id="language-select"></select>
 
-            <h3>Working location:</h3>
+            <label for="location-select">Working location:</label>
             <select id="location-select"></select>
 
-            <h3>Job Position:</h3>
+            <label for="job-type-select">Job Position:</label>
             <select id="job-type-select"></select>
 
             <div>
                 <h3 id="job-title-display"></h3>
                 <a id="job-link-display" href="#" target="_blank"></a>
             </div>
+
             <button onclick="nextStep()">Next</button>
 
             <h2>Follow Us On:</h2>
