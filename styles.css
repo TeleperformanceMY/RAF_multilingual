@@ -3,14 +3,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('TPLogo11.png') no-repeat center top fixed;
+    background: url('TPLogo11.png') no-repeat center center fixed;
     background-size: contain;
     background-color: #ffffff;
 }
 
 /* Main Content Container */
 .container {
-    max-width: 90%;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     position: relative;
@@ -126,12 +126,12 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
+    gap: 1rem;
 }
 
 .social-btn {
     width: 40px;
     height: 40px;
-    margin: 5px;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -156,6 +156,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px 0;
+    gap: 0.5rem;
 }
 
 .small-share-button {
@@ -187,17 +188,8 @@ body {
     position: relative;
 }
 
-#qr-code canvas {
+#qr-code img {
     width: 200px;
-    height: auto;
-}
-
-#qr-code img.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
     height: auto;
 }
 
@@ -243,12 +235,8 @@ body {
         padding: 8px 12px;
     }
 
-    #qr-code canvas {
+    #qr-code img {
         width: 150px;
-    }
-
-    #qr-code img.logo {
-        width: 60px;
     }
 }
 
@@ -285,11 +273,7 @@ body {
         padding: 6px 10px;
     }
 
-    #qr-code canvas {
+    #qr-code img {
         width: 120px;
-    }
-
-    #qr-code img.logo {
-        width: 50px;
     }
 }
