@@ -3,30 +3,19 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-}
-
-/* Static Background Logo */
-.background-logo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Place it behind other content */
+    /* Static background logo */
     background: url('TPLogo11.png') no-repeat center center fixed;
     background-size: cover;
 }
 
 /* Main Content Container */
 .container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
     z-index: 1;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Small Dynamic Logo */
@@ -51,7 +40,7 @@ body {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #780096;
-    color: #ffffff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -67,20 +56,15 @@ body {
 }
 
 .language-selection label {
-    display: block;
     font-weight: bold;
+    display: block;
     margin-bottom: 5px;
-    color: #333;
 }
 
 .language-selection select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    appearance: none;
-    background-color: #fff;
 }
 
 /* Popup Content */
@@ -96,30 +80,37 @@ body {
 
 .popup-content h3 {
     color: #361e3d;
+    font-size: 20px;
     margin-bottom: 10px;
+}
+
+.popup-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 .popup-content input,
 .popup-content select {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
     font-size: 16px;
     border: 2px solid #f2f2f2;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .popup-content input:focus,
 .popup-content select:focus {
-    outline: none;
     border-color: #FF0082;
+    outline: none;
 }
 
 .popup-content button {
     padding: 12px 20px;
     font-size: 16px;
     background-color: #780096;
-    color: #ffffff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -131,48 +122,48 @@ body {
 
 /* Social Buttons */
 .social-buttons {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
 }
 
 .social-btn {
     width: 40px;
     height: 40px;
-    display: inline-block;
-    margin: 0 5px;
-    background-size: contain;
+    margin: 0 10px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .fb-btn {
     background-image: url('fb.png');
-    background-color: #3b5998;
 }
 
 .ig-btn {
-    background-image: url('ig.png');
-    background-color: #e4405f;
+    background-image: url('ig.jpeg');
 }
 
 .yt-btn {
     background-image: url('yt.png');
-    background-color: #cd201f;
 }
 
 /* Share Buttons */
 .share-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 20px 0;
-    text-align: center;
 }
 
 .small-share-button {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin: 5px;
-    padding: 10px;
+    padding: 10px 15px;
     background-color: #780096;
-    color: #ffffff;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -181,8 +172,7 @@ body {
 .small-share-button img {
     width: 20px;
     height: 20px;
-    vertical-align: middle;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .small-share-button:hover {
@@ -193,6 +183,7 @@ body {
 #qr-code {
     text-align: center;
     margin: 20px 0;
+    position: relative;
 }
 
 #qr-code canvas {
@@ -202,11 +193,11 @@ body {
 
 #qr-code img.logo {
     position: absolute;
-    width: 80px;
-    height: 80px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
 }
 
 /* Picture Container */
@@ -221,7 +212,7 @@ body {
     border-radius: 10px;
 }
 
-/* Responsive Design */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .small-dynamic-logo img {
         width: 80px;
@@ -247,12 +238,18 @@ body {
     }
 
     .small-share-button {
-        padding: 8px;
+        font-size: 14px;
+        padding: 8px 12px;
     }
 
     #qr-code canvas {
         width: 150px;
         height: 150px;
+    }
+
+    #qr-code img.logo {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -267,8 +264,7 @@ body {
 
     .how-to-button,
     .popup-content button {
-        width: 100%;
-        font-size: 14px;
+        font-size: 12px;
         padding: 10px;
     }
 
@@ -286,11 +282,17 @@ body {
     }
 
     .small-share-button {
-        padding: 6px;
+        font-size: 12px;
+        padding: 6px 10px;
     }
 
     #qr-code canvas {
         width: 120px;
         height: 120px;
+    }
+
+    #qr-code img.logo {
+        width: 50px;
+        height: 50px;
     }
 }
